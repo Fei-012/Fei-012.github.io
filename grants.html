@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grant Applications | Future and Connection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="sideMenu" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <aside class="side-menu" id="sideMenu" aria-hidden="true">
+      <div class="menu-panel">
+        <div class="menu-head">
+          <p class="menu-label">Menu</p>
+          <button class="menu-close" id="menuClose" type="button" aria-label="Close menu">
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+        <nav class="menu-nav" aria-label="Site navigation">
+          <a href="./index.html">Home</a>
+          <a href="./reports.html">Reports</a>
+          <a href="./grants.html">Grant Applications</a>
+          <a href="./planning.html">Planning</a>
+          <a href="./projects.html">Projects</a>
+          <a href="./visuals.html">Visuals</a>
+        </nav>
+      </div>
+    </aside>
+
+    <main class="page-shell">
+      <div class="page-inner">
+        <section class="page-hero">
+          <p class="menu-label">Grant Applications</p>
+          <h1>Funding ideas, proposals, and versions.</h1>
+          <p>
+            This page keeps the application materials together so they feel like part of a coherent
+            process rather than loose files.
+          </p>
+        </section>
+
+        <section class="content-grid">
+          <article class="content-card">
+            <h2 class="section-title">Lighthouse Project Grant Application</h2>
+            <p>Main PDF version of the 2026 Lighthouse Project grant application.</p>
+            <ul>
+              <li>Format: PDF</li>
+              <li>Length: 8 pages</li>
+            </ul>
+            <a class="doc-link" href="./assets/docs/Lighthouse%20Project%20Grant%20Application%20-%20Tiange%20Xiang%20(Grace)2026.pdf" target="_blank" rel="noreferrer">Open document</a>
+          </article>
+
+          <article class="content-card">
+            <h2 class="section-title">Grant Export Version</h2>
+            <p>Alternate PDF export of the same application for version comparison and archive.</p>
+            <ul>
+              <li>Format: PDF</li>
+              <li>Length: 8 pages</li>
+            </ul>
+            <a class="doc-link" href="./assets/docs/Lighthouse%20Project%20Grant%20Application%20-%20Tiange%20Xiang%20(Grace)2026.docx.pdf" target="_blank" rel="noreferrer">Open export</a>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

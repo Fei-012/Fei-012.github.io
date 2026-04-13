@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planning | Future and Connection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="sideMenu" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <aside class="side-menu" id="sideMenu" aria-hidden="true">
+      <div class="menu-panel">
+        <div class="menu-head">
+          <p class="menu-label">Menu</p>
+          <button class="menu-close" id="menuClose" type="button" aria-label="Close menu">
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+        <nav class="menu-nav" aria-label="Site navigation">
+          <a href="./index.html">Home</a>
+          <a href="./reports.html">Reports</a>
+          <a href="./grants.html">Grant Applications</a>
+          <a href="./planning.html">Planning</a>
+          <a href="./projects.html">Projects</a>
+          <a href="./visuals.html">Visuals</a>
+        </nav>
+      </div>
+    </aside>
+
+    <main class="page-shell">
+      <div class="page-inner">
+        <section class="page-hero">
+          <p class="menu-label">Planning</p>
+          <h1>Structure, preparation, and working plans.</h1>
+          <p>
+            The planning page gives the operational material its own space, away from the visual
+            landing page.
+          </p>
+        </section>
+
+        <section class="content-grid">
+          <article class="content-card full">
+            <h2 class="section-title">SDI Activity Plan</h2>
+            <p>
+              Planning material for SDI, grouped here as process design, preparation, and working
+              structure.
+            </p>
+            <ul>
+              <li>Format: PDF</li>
+              <li>Length: 6 pages</li>
+            </ul>
+            <a class="doc-link" href="./assets/docs/Acticity%20plan%20for%20SDI%20(1).pdf" target="_blank" rel="noreferrer">Open plan</a>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
