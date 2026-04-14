@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curricular Activities | Future and Connection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="top-nav">
+      <nav class="top-nav-links top-nav-centered" aria-label="Primary">
+        <a class="nav-link-pill" href="./index.html">Home</a>
+        <div class="nav-connector" aria-hidden="true"></div>
+        <div class="dropdown" id="menuMenu">
+          <button
+            class="dropdown-toggle nav-link-pill"
+            id="menuToggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="menuPanel"
+          >
+            Menu
+          </button>
+          <div class="dropdown-panel" id="menuPanel">
+            <a href="./project-overview.html">Project Overview</a>
+            <a href="./curricular-activities.html">Curricular Activities</a>
+            <a href="./stories.html">Stories</a>
+          </div>
+        </div>
+        <div class="nav-connector" aria-hidden="true"></div>
+        <div class="dropdown" id="moreMenu">
+          <button
+            class="dropdown-toggle nav-link-pill"
+            id="moreToggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="morePanel"
+          >
+            More
+          </button>
+          <div class="dropdown-panel" id="morePanel">
+            <a href="./project-overview.html">Project Overview</a>
+            <a href="./grants.html">Grant Applications</a>
+            <a href="./curricular-activities.html">Curricular Activities</a>
+            <a href="./stories.html">Stories</a>
+            <a href="./visuals.html">Visuals</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <div class="page-inner">
+        <section class="page-hero">
+          <p class="menu-label" data-editable="curricular-activities-label">Curricular Activities</p>
+          <h1 data-editable="curricular-activities-title">The learning experiences at the center of the work.</h1>
+          <p data-editable="curricular-activities-intro">
+            This page can present workshops, classroom ideas, art activities, and other learning
+            structures that support the children involved in the project.
+          </p>
+        </section>
+
+        <section class="subpage-list">
+          <article class="subpage-item">
+            <a class="doc-link subpage-button" href="./mental-health-curriculum-content.html">
+              <span data-editable="curricular-activities-link-1">Mental Health Curriculum Content</span>
+            </a>
+            <div class="subpage-text">
+              <p class="menu-label" data-editable="curricular-activities-label-1">Sub-page</p>
+              <p class="subpage-copy" data-editable="curricular-activities-copy-1">
+                A section for lesson content, frameworks, and materials related to mental health
+                learning within the curriculum.
+              </p>
+            </div>
+          </article>
+
+          <article class="subpage-item">
+            <a class="doc-link subpage-button" href="./extracurricular.html">
+              <span data-editable="curricular-activities-link-2">Extracurricular</span>
+            </a>
+            <div class="subpage-text">
+              <p class="menu-label" data-editable="curricular-activities-label-2">Sub-page</p>
+              <p class="subpage-copy" data-editable="curricular-activities-copy-2">
+                A page for activities beyond the formal curriculum, including clubs, events, and
+                community-based learning experiences.
+              </p>
+            </div>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

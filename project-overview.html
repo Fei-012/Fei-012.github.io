@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Overview | Future and Connection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="top-nav">
+      <nav class="top-nav-links top-nav-centered" aria-label="Primary">
+        <a class="nav-link-pill" href="./index.html">Home</a>
+        <div class="nav-connector" aria-hidden="true"></div>
+        <div class="dropdown" id="menuMenu">
+          <button
+            class="dropdown-toggle nav-link-pill"
+            id="menuToggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="menuPanel"
+          >
+            Menu
+          </button>
+          <div class="dropdown-panel" id="menuPanel">
+            <a href="./project-overview.html">Project Overview</a>
+            <a href="./curricular-activities.html">Curricular Activities</a>
+            <a href="./stories.html">Stories</a>
+          </div>
+        </div>
+        <div class="nav-connector" aria-hidden="true"></div>
+        <div class="dropdown" id="moreMenu">
+          <button
+            class="dropdown-toggle nav-link-pill"
+            id="moreToggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="morePanel"
+          >
+            More
+          </button>
+          <div class="dropdown-panel" id="morePanel">
+            <a href="./project-overview.html">Project Overview</a>
+            <a href="./grants.html">Grant Applications</a>
+            <a href="./curricular-activities.html">Curricular Activities</a>
+            <a href="./stories.html">Stories</a>
+            <a href="./visuals.html">Visuals</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <div class="page-inner">
+        <section class="page-hero">
+          <p class="menu-label" data-editable="project-overview-label">Project Overview</p>
+          <h1 data-editable="project-overview-title">A clear introduction to the whole initiative.</h1>
+          <p data-editable="project-overview-intro">
+            This page can explain the overall goals, context, and structure of the education
+            project for migrant children in one place.
+          </p>
+        </section>
+
+        <section class="subpage-list">
+          <article class="subpage-item">
+            <a class="doc-link subpage-button" href="./2025-project-report.html">
+              <span data-editable="project-overview-subpage-link-1">2025 Project Report</span>
+            </a>
+            <div class="subpage-text">
+              <p class="menu-label" data-editable="project-overview-subpage-label-1">Sub-page</p>
+              <p class="subpage-copy" data-editable="project-overview-subpage-copy-1">
+                A dedicated page for the 2025 report, including summaries, milestones, and links
+                to supporting materials.
+              </p>
+            </div>
+          </article>
+
+          <article class="subpage-item">
+            <a class="doc-link subpage-button" href="./2026-project.html">
+              <span data-editable="project-overview-subpage-link-2">2026 Project</span>
+            </a>
+            <div class="subpage-text">
+              <p class="menu-label" data-editable="project-overview-subpage-label-2">Sub-page</p>
+              <p class="subpage-copy" data-editable="project-overview-subpage-copy-2">
+                A space for the next phase of the initiative, where you can develop plans, aims,
+                and materials for the 2026 project.
+              </p>
+            </div>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

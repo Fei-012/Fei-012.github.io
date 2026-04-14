@@ -19,12 +19,12 @@
   <body class="landing-body">
     <div class="site-frame">
       <header class="top-nav">
-        <a class="nav-brand" href="./index.html">Future and Connection</a>
-        <nav class="top-nav-links" aria-label="Primary">
-          <a href="./index.html">Home</a>
+        <nav class="top-nav-links top-nav-centered" aria-label="Primary">
+          <a class="nav-link-pill" href="./index.html">Home</a>
+          <div class="nav-connector" aria-hidden="true"></div>
           <div class="dropdown" id="menuMenu">
             <button
-              class="dropdown-toggle"
+              class="dropdown-toggle nav-link-pill"
               id="menuToggle"
               type="button"
               aria-expanded="false"
@@ -33,14 +33,15 @@
               Menu
             </button>
             <div class="dropdown-panel" id="menuPanel">
-              <a href="./reports.html">Reports</a>
-              <a href="./planning.html">Planning</a>
-              <a href="./projects.html">Projects</a>
+              <a href="./project-overview.html">Project Overview</a>
+              <a href="./curricular-activities.html">Curricular Activities</a>
+              <a href="./stories.html">Stories</a>
             </div>
           </div>
+          <div class="nav-connector" aria-hidden="true"></div>
           <div class="dropdown" id="moreMenu">
             <button
-              class="dropdown-toggle"
+              class="dropdown-toggle nav-link-pill"
               id="moreToggle"
               type="button"
               aria-expanded="false"
@@ -49,98 +50,86 @@
               More
             </button>
             <div class="dropdown-panel" id="morePanel">
-              <a href="./reports.html">Reports</a>
+              <a href="./project-overview.html">Project Overview</a>
               <a href="./grants.html">Grant Applications</a>
-              <a href="./planning.html">Planning</a>
-              <a href="./projects.html">Projects</a>
+              <a href="./curricular-activities.html">Curricular Activities</a>
+              <a href="./stories.html">Stories</a>
               <a href="./visuals.html">Visuals</a>
             </div>
           </div>
         </nav>
       </header>
 
-      <main>
+      <main class="landing-main">
         <section class="hero-section" id="top">
-          <div class="hero-image-wrap">
-            <img class="hero-image" src="./assets/images/home-hero.jpg" alt="Summer SDI photo" />
-            <div class="hero-mask"></div>
-            <div class="hero-vignette"></div>
-          </div>
-
           <div class="hero-content">
             <div class="title-stack">
-              <h1>Future and Connection</h1>
-              <p class="title-subline">we wish us all the best</p>
-            </div>
-            <a class="scroll-prompt" href="#introduction">Scroll down</a>
-          </div>
-        </section>
-
-        <section class="story-section intro-section" id="introduction">
-          <div class="section-shell">
-            <p class="section-kicker">Introduction</p>
-            <h2 class="section-heading">An opening page that leads into the project, not just a title card.</h2>
-            <p class="section-copy">
-              Future and Connection begins with a single image and a quiet invitation, then opens
-              into a larger project space. This homepage is designed to feel atmospheric at first,
-              and then gradually become more informative as you move downward through the story.
-            </p>
-          </div>
-        </section>
-
-        <section class="story-section pathways-section" id="pathways">
-          <div class="section-shell">
-            <p class="section-kicker">Project Paths</p>
-            <h2 class="section-heading">Three directions into the work.</h2>
-            <div class="triangle-links">
-              <a class="triangle-node triangle-top" href="./reports.html">
-                <span>Reports</span>
-              </a>
-              <a class="triangle-node triangle-left" href="./planning.html">
-                <span>Planning</span>
-              </a>
-              <a class="triangle-node triangle-right" href="./projects.html">
-                <span>Projects</span>
-              </a>
-              <div class="triangle-lines" aria-hidden="true"></div>
+              <img class="hero-title-gif" src="./GIF/bigTitle.gif" alt="Future and Connection" />
+              <p class="title-subline" data-editable="home-subline">A quiet introduction to the project and the spaces it opens.</p>
             </div>
           </div>
         </section>
 
-        <section class="story-section detail-section" id="details">
-          <div class="section-shell detail-grid">
-            <div class="detail-card">
-              <p class="section-kicker">Further Description</p>
-              <h2 class="section-heading">A longer reading experience below the image-led opening.</h2>
-              <p class="section-copy">
-                The rest of the website can hold documents, plans, visual references, and project
-                pathways without interrupting the atmosphere of the first screen. The homepage now
-                acts as a narrative entrance, with the detailed pages living just beyond it.
+        <div class="content-layer">
+          <section class="story-section intro-section" id="introduction">
+            <div class="section-shell floating-panel">
+              <p class="section-copy" data-editable="home-intro-copy">
+                Future and Connection introduces an education initiative centered on migrant
+                children, beginning with atmosphere and then opening into the practical materials
+                behind the work.
               </p>
             </div>
-            <div class="detail-card">
-              <p class="section-kicker">More</p>
-              <p class="section-copy">
-                Use the top dropdown to move to other parts of the project, or step into the three
-                featured directions above. This structure keeps the homepage spacious while still
-                making the rest of the archive easy to reach.
-              </p>
+          </section>
+
+          <section class="story-section pathways-section" id="pathways">
+            <div class="section-shell floating-panel">
+              <p class="section-kicker" data-editable="home-paths-kicker">Project Paths</p>
+              <h2 class="section-heading" data-editable="home-paths-heading">Three directions into the work.</h2>
+              <div class="pathway-grid">
+                <div class="pathway-item">
+                  <a class="pathway-button" href="./project-overview.html">
+                    <span data-editable="home-path-report">Project Overview</span>
+                  </a>
+                  <p class="pathway-copy" data-editable="home-path-report-copy">
+                    A general introduction to the project, its purpose, timeline, and development
+                    across different years.
+                  </p>
+                </div>
+                <div class="pathway-item">
+                  <a class="pathway-button" href="./curricular-activities.html">
+                    <span data-editable="home-path-planning">Curricular Activities</span>
+                  </a>
+                  <p class="pathway-copy" data-editable="home-path-planning-copy">
+                    A space for workshops, classroom ideas, and activity structures that shape the
+                    educational experience.
+                  </p>
+                </div>
+                <div class="pathway-item">
+                  <a class="pathway-button" href="./stories.html">
+                    <span data-editable="home-path-projects">Stories</span>
+                  </a>
+                  <p class="pathway-copy" data-editable="home-path-projects-copy">
+                    A place for voices, reflections, and narratives that show the human side of
+                    the project.
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </main>
 
       <footer class="site-footer">
         <div class="footer-shell">
           <div>
             <p class="section-kicker">Contact</p>
-            <h2 class="footer-title">Stay connected.</h2>
+            <h2 class="footer-title" data-editable="home-footer-title">Stay connected.</h2>
           </div>
           <div class="footer-links">
-            <a href="mailto:yourname@example.com">Gmail</a>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
-            <a href="https://x.com" target="_blank" rel="noreferrer">X / Twitter</a>
-            <a href="https://github.com/Fei-012/Fei-012.github.io" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="mailto:yourname@example.com"><span data-editable="home-footer-gmail">Gmail</span></a>
+            <a href="https://instagram.com" target="_blank" rel="noreferrer"><span data-editable="home-footer-instagram">Instagram</span></a>
+            <a href="https://x.com" target="_blank" rel="noreferrer"><span data-editable="home-footer-x">X / Twitter</span></a>
+            <a href="https://github.com/Fei-012/Fei-012.github.io" target="_blank" rel="noreferrer"><span data-editable="home-footer-github">GitHub</span></a>
           </div>
         </div>
       </footer>

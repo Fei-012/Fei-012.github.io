@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stories | Future and Connection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="top-nav">
+      <nav class="top-nav-links top-nav-centered" aria-label="Primary">
+        <a class="nav-link-pill" href="./index.html">Home</a>
+        <div class="nav-connector" aria-hidden="true"></div>
+        <div class="dropdown" id="menuMenu">
+          <button
+            class="dropdown-toggle nav-link-pill"
+            id="menuToggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="menuPanel"
+          >
+            Menu
+          </button>
+          <div class="dropdown-panel" id="menuPanel">
+            <a href="./project-overview.html">Project Overview</a>
+            <a href="./curricular-activities.html">Curricular Activities</a>
+            <a href="./stories.html">Stories</a>
+          </div>
+        </div>
+        <div class="nav-connector" aria-hidden="true"></div>
+        <div class="dropdown" id="moreMenu">
+          <button
+            class="dropdown-toggle nav-link-pill"
+            id="moreToggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="morePanel"
+          >
+            More
+          </button>
+          <div class="dropdown-panel" id="morePanel">
+            <a href="./project-overview.html">Project Overview</a>
+            <a href="./grants.html">Grant Applications</a>
+            <a href="./curricular-activities.html">Curricular Activities</a>
+            <a href="./stories.html">Stories</a>
+            <a href="./visuals.html">Visuals</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <div class="page-inner">
+        <section class="page-hero">
+          <p class="menu-label" data-editable="stories-label">Stories</p>
+          <h1 data-editable="stories-title">Voices, experiences, and narratives from the project.</h1>
+          <p data-editable="stories-intro">
+            This page can hold stories from the children, teachers, and organizers so the human
+            side of the project remains visible.
+          </p>
+        </section>
+
+        <section class="subpage-list">
+          <article class="subpage-item">
+            <a class="doc-link subpage-button" href="./2025-cake.html">
+              <span data-editable="stories-link-1">2025 (Cake)</span>
+            </a>
+            <div class="subpage-text">
+              <p class="menu-label" data-editable="stories-label-1">Sub-page</p>
+              <p class="subpage-copy" data-editable="stories-copy-1">
+                A story page focused on the 2025 piece marked as Cake, where you can place text,
+                images, and reflections tied to that moment.
+              </p>
+            </div>
+          </article>
+
+          <article class="subpage-item">
+            <a class="doc-link subpage-button" href="./2026-documentary.html">
+              <span data-editable="stories-link-2">2026 (Documentary)</span>
+            </a>
+            <div class="subpage-text">
+              <p class="menu-label" data-editable="stories-label-2">Sub-page</p>
+              <p class="subpage-copy" data-editable="stories-copy-2">
+                A story page for the 2026 documentary material, including narrative development,
+                notes, and visual references.
+              </p>
+            </div>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

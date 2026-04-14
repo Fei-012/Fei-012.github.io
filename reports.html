@@ -14,12 +14,12 @@
   </head>
   <body>
     <header class="top-nav">
-      <a class="nav-brand" href="./index.html">Future and Connection</a>
-      <nav class="top-nav-links" aria-label="Primary">
-        <a href="./index.html">Home</a>
+      <nav class="top-nav-links top-nav-centered" aria-label="Primary">
+        <a class="nav-link-pill" href="./index.html">Home</a>
+        <div class="nav-connector" aria-hidden="true"></div>
         <div class="dropdown" id="menuMenu">
           <button
-            class="dropdown-toggle"
+            class="dropdown-toggle nav-link-pill"
             id="menuToggle"
             type="button"
             aria-expanded="false"
@@ -33,9 +33,10 @@
             <a href="./projects.html">Projects</a>
           </div>
         </div>
+        <div class="nav-connector" aria-hidden="true"></div>
         <div class="dropdown" id="moreMenu">
           <button
-            class="dropdown-toggle"
+            class="dropdown-toggle nav-link-pill"
             id="moreToggle"
             type="button"
             aria-expanded="false"
@@ -57,26 +58,26 @@
     <main class="page-shell">
       <div class="page-inner">
         <section class="page-hero">
-          <p class="menu-label">Reports</p>
-          <h1>Documents that hold the longer story.</h1>
-          <p>
-            This page gathers the report-style material into one quieter space, separate from the
-            homepage.
+          <p class="menu-label" data-editable="reports-label">Reports</p>
+          <h1 data-editable="reports-title">Reports that document the work in depth.</h1>
+          <p data-editable="reports-intro">
+            This space gathers the longer written material for the education project, so readers
+            can move from the homepage into fuller context, evidence, and reflection.
           </p>
         </section>
 
         <section class="content-grid">
           <article class="content-card full">
-            <h2 class="section-title">STP Report</h2>
-            <p>
-              A 32-page report that feels like the anchor document in the collection and can serve
-              as the main reference point for the rest of the site.
+            <h2 class="section-title" data-editable="reports-card-title">STP Report</h2>
+            <p data-editable="reports-card-copy">
+              A core reference document for understanding the program, its background, and the
+              educational direction of the work.
             </p>
             <ul>
-              <li>Format: PDF</li>
-              <li>Length: 32 pages</li>
+              <li data-editable="reports-format">Format: PDF</li>
+              <li data-editable="reports-length">Length: 32 pages</li>
             </ul>
-            <a class="doc-link" href="./assets/docs/Tiange%20Xiang%20(Grace)%20-%20STP%20Report.pdf" target="_blank" rel="noreferrer">Open report</a>
+            <a class="doc-link" href="./assets/docs/Tiange%20Xiang%20(Grace)%20-%20STP%20Report.pdf" target="_blank" rel="noreferrer"><span data-editable="reports-link-label">Open report</span></a>
           </article>
         </section>
       </div>

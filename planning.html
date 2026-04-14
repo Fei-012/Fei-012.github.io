@@ -14,12 +14,12 @@
   </head>
   <body>
     <header class="top-nav">
-      <a class="nav-brand" href="./index.html">Future and Connection</a>
-      <nav class="top-nav-links" aria-label="Primary">
-        <a href="./index.html">Home</a>
+      <nav class="top-nav-links top-nav-centered" aria-label="Primary">
+        <a class="nav-link-pill" href="./index.html">Home</a>
+        <div class="nav-connector" aria-hidden="true"></div>
         <div class="dropdown" id="menuMenu">
           <button
-            class="dropdown-toggle"
+            class="dropdown-toggle nav-link-pill"
             id="menuToggle"
             type="button"
             aria-expanded="false"
@@ -33,9 +33,10 @@
             <a href="./projects.html">Projects</a>
           </div>
         </div>
+        <div class="nav-connector" aria-hidden="true"></div>
         <div class="dropdown" id="moreMenu">
           <button
-            class="dropdown-toggle"
+            class="dropdown-toggle nav-link-pill"
             id="moreToggle"
             type="button"
             aria-expanded="false"
@@ -57,26 +58,26 @@
     <main class="page-shell">
       <div class="page-inner">
         <section class="page-hero">
-          <p class="menu-label">Planning</p>
-          <h1>Structure, preparation, and working plans.</h1>
-          <p>
-            The planning page gives the operational material its own space, away from the visual
-            landing page.
+          <p class="menu-label" data-editable="planning-label">Planning</p>
+          <h1 data-editable="planning-title">Planning, structure, and next-step preparation.</h1>
+          <p data-editable="planning-intro">
+            This page holds the working structure behind the project, including preparation,
+            scheduling, and practical design for activities with children.
           </p>
         </section>
 
         <section class="content-grid">
           <article class="content-card full">
-            <h2 class="section-title">SDI Activity Plan</h2>
-            <p>
-              Planning material for SDI, grouped here as process design, preparation, and working
-              structure.
+            <h2 class="section-title" data-editable="planning-card-title">SDI Activity Plan</h2>
+            <p data-editable="planning-card-copy">
+              Planning material organized as process design, preparation, and implementation steps
+              for the educational activities.
             </p>
             <ul>
-              <li>Format: PDF</li>
-              <li>Length: 6 pages</li>
+              <li data-editable="planning-format">Format: PDF</li>
+              <li data-editable="planning-length">Length: 6 pages</li>
             </ul>
-            <a class="doc-link" href="./assets/docs/Acticity%20plan%20for%20SDI%20(1).pdf" target="_blank" rel="noreferrer">Open plan</a>
+            <a class="doc-link" href="./assets/docs/Acticity%20plan%20for%20SDI%20(1).pdf" target="_blank" rel="noreferrer"><span data-editable="planning-link-label">Open plan</span></a>
           </article>
         </section>
       </div>
