@@ -3,6 +3,7 @@
   src:
     local("Castle Regular"),
     local("CastleRegularCalligraphr"),
+    url("./Castle-Regular.woff2") format("woff2"),
     url("./Castle-Regular.otf") format("truetype");
   font-style: normal;
   font-weight: 400;
