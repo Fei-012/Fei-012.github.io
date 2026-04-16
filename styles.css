@@ -244,7 +244,7 @@ a {
 .title-subline {
   margin: 16px auto 0;
   max-width: 34rem;
-  font-size: clamp(1rem, 1.9vw, 1.3rem);
+  font-size: clamp(1.28rem, 2.25vw, 1.72rem);
   letter-spacing: 0.05em;
   line-height: 1.6;
   color: var(--muted);
@@ -316,6 +316,14 @@ a {
 .landing-main .section-kicker {
   margin-left: auto;
   margin-right: auto;
+}
+
+.landing-main .section-kicker {
+  font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+}
+
+.intro-section .section-copy {
+  font-size: clamp(1.12rem, 1.6vw, 1.34rem);
 }
 
 .content-layer {
@@ -439,7 +447,7 @@ a {
   margin: 0 auto;
   font-family: "Castle", "Manrope", sans-serif;
   color: var(--muted);
-  font-size: clamp(1.02rem, 1.35vw, 1.16rem);
+  font-size: clamp(1.08rem, 1.45vw, 1.22rem);
   line-height: 1.75;
 }
 
