@@ -136,7 +136,7 @@ a {
   border-radius: 999px;
   color: rgba(255, 255, 255, 0.92);
   font-family: "Castle", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 12px;
+  font-size: 0.95rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   transition: background 0.2s ease, transform 0.2s ease;
@@ -189,10 +189,44 @@ a {
   padding: 10px 14px;
   border-radius: 999px;
   font-family: "Castle", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 0.74rem;
+  font-size: 0.84rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.9);
+}
+
+.language-switch {
+  position: fixed;
+  top: 68px;
+  left: 18px;
+  z-index: 48;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04)),
+    rgba(10, 10, 10, 0.34);
+  color: rgba(255, 255, 255, 0.94);
+  font-family: "Castle", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.86rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.2);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.language-switch:hover,
+.language-switch:focus-visible {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.08)),
+    rgba(10, 10, 10, 0.44);
+  transform: translateY(-1px);
 }
 
 .dropdown-panel a:hover,
@@ -740,9 +774,17 @@ a {
 
   .nav-link-pill,
   .dropdown-toggle {
-    font-size: 0.72rem;
+    font-size: 0.8rem;
     min-height: 30px;
     padding: 0 8px;
+  }
+
+  .language-switch {
+    top: 60px;
+    left: 10px;
+    min-height: 34px;
+    padding: 0 12px;
+    font-size: 0.76rem;
   }
 
   .nav-connector {

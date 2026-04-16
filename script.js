@@ -53,6 +53,66 @@ const editableElements = document.querySelectorAll("[data-editable]");
 const storagePrefix = `future-and-connection:${window.location.pathname}:`;
 let saveTimeout;
 
+const navTranslations = {
+  en: {
+    home: "Home",
+    menu: "Menu",
+    more: "More",
+    "./project-overview.html": "Project Overview",
+    "./curricular-activities.html": "Curricular Activities",
+    "./stories.html": "Stories",
+    "./grants.html": "Grant Applications",
+    "./visuals.html": "Visuals",
+  },
+  zh: {
+    home: "首页",
+    menu: "菜单",
+    more: "更多",
+    "./project-overview.html": "项目概览",
+    "./curricular-activities.html": "课程活动",
+    "./stories.html": "故事",
+    "./grants.html": "资助申请",
+    "./visuals.html": "视觉资料",
+  },
+};
+
+const pageTranslations = {
+  "/index.html": {
+    zh: {
+      "home-subline": "一个安静展开的项目开场，以及它所打开的空间。",
+      "home-intro-copy":
+        "Future and Connection 介绍了一个以流动儿童为中心的教育项目，从氛围开始，再慢慢打开这项工作的具体材料与实践。",
+      "home-paths-kicker": "项目路径",
+      "home-paths-heading": "进入这项工作的三个方向。",
+      "home-path-report": "项目概览",
+      "home-path-report-copy": "对项目、它的目标、时间线以及不同年份发展过程的整体介绍。",
+      "home-path-planning": "课程活动",
+      "home-path-planning-copy": "一个放置工作坊、课堂想法与活动结构的空间，它们共同塑造了教育体验。",
+      "home-path-projects": "故事",
+      "home-path-projects-copy": "一个承载声音、反思与叙述的地方，让项目中更具人的一面被看见。",
+      "home-footer-title": "保持联系。",
+    },
+  },
+  "/": {
+    zh: {
+      "home-subline": "一个安静展开的项目开场，以及它所打开的空间。",
+      "home-intro-copy":
+        "Future and Connection 介绍了一个以流动儿童为中心的教育项目，从氛围开始，再慢慢打开这项工作的具体材料与实践。",
+      "home-paths-kicker": "项目路径",
+      "home-paths-heading": "进入这项工作的三个方向。",
+      "home-path-report": "项目概览",
+      "home-path-report-copy": "对项目、它的目标、时间线以及不同年份发展过程的整体介绍。",
+      "home-path-planning": "课程活动",
+      "home-path-planning-copy": "一个放置工作坊、课堂想法与活动结构的空间，它们共同塑造了教育体验。",
+      "home-path-projects": "故事",
+      "home-path-projects-copy": "一个承载声音、反思与叙述的地方，让项目中更具人的一面被看见。",
+      "home-footer-title": "保持联系。",
+    },
+  },
+};
+
+const languageStorageKey = "future-and-connection:language";
+
 const createEditorToolbar = () => {
   const toolbar = document.createElement("div");
   toolbar.className = "editor-toolbar";
@@ -100,6 +160,8 @@ editableElements.forEach((element) => {
     element.innerHTML = storedValue;
   }
 
+  element.dataset.enContent = element.innerHTML;
+
   element.addEventListener("input", () => {
     window.clearTimeout(saveTimeout);
     statusLabel.textContent = "Saving changes...";
@@ -112,6 +174,74 @@ editableElements.forEach((element) => {
 if (editableElements.length > 0) {
   document.body.classList.add("editing-active");
 }
+
+const createLanguageSwitch = () => {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "language-switch";
+  button.setAttribute("aria-pressed", "false");
+  document.body.append(button);
+  return button;
+};
+
+const languageButton = createLanguageSwitch();
+
+const applyNavTranslations = (language) => {
+  const homeLink = document.querySelector('.top-nav a.nav-link-pill[href="./index.html"]');
+  if (homeLink) {
+    homeLink.textContent = navTranslations[language].home;
+  }
+
+  const menuToggle = document.getElementById("menuToggle");
+  const moreToggle = document.getElementById("moreToggle");
+
+  if (menuToggle) {
+    menuToggle.textContent = navTranslations[language].menu;
+  }
+
+  if (moreToggle) {
+    moreToggle.textContent = navTranslations[language].more;
+  }
+
+  document.querySelectorAll(".dropdown-panel a").forEach((link) => {
+    const translatedLabel = navTranslations[language][link.getAttribute("href")];
+    if (translatedLabel) {
+      link.textContent = translatedLabel;
+    }
+  });
+};
+
+const applyPageTranslations = (language) => {
+  const translations = pageTranslations[window.location.pathname]?.[language];
+
+  editableElements.forEach((element) => {
+    if (language === "zh" && translations?.[element.dataset.editable]) {
+      element.innerHTML = translations[element.dataset.editable];
+      return;
+    }
+
+    if (language === "en" && element.dataset.enContent) {
+      element.innerHTML = element.dataset.enContent;
+    }
+  });
+};
+
+const applyLanguage = (language) => {
+  applyNavTranslations(language);
+  applyPageTranslations(language);
+  languageButton.textContent = language === "zh" ? "English" : "中文";
+  languageButton.setAttribute("aria-pressed", String(language === "zh"));
+  document.documentElement.lang = language === "zh" ? "zh-CN" : "en";
+  window.localStorage.setItem(languageStorageKey, language);
+};
+
+languageButton.addEventListener("click", () => {
+  const nextLanguage =
+    window.localStorage.getItem(languageStorageKey) === "zh" ? "en" : "zh";
+  applyLanguage(nextLanguage);
+});
+
+applyLanguage(window.localStorage.getItem(languageStorageKey) === "zh" ? "zh" : "en");
 
 const revealItems = document.querySelectorAll(".floating-panel, .detail-card");
 
