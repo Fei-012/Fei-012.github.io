@@ -52,6 +52,8 @@ document.addEventListener("keydown", (event) => {
 const editableElements = document.querySelectorAll("[data-editable]");
 const storagePrefix = `future-and-connection:${window.location.pathname}:`;
 let saveTimeout;
+let activeLanguage = "en";
+let isApplyingLanguage = false;
 
 const navTranslations = {
   en: {
@@ -141,7 +143,12 @@ const statusLabel = createEditorToolbar();
 const persistEditableContent = () => {
   editableElements.forEach((element) => {
     const key = `${storagePrefix}${element.dataset.editable}`;
-    localStorage.setItem(key, element.innerHTML);
+    const contentToStore =
+      activeLanguage === "zh" && element.dataset.enContent
+        ? element.dataset.enContent
+        : element.innerHTML;
+
+    localStorage.setItem(key, contentToStore);
   });
 
   statusLabel.textContent = `Saved automatically at ${new Date().toLocaleTimeString([], {
@@ -163,12 +170,30 @@ editableElements.forEach((element) => {
   element.dataset.enContent = element.innerHTML;
 
   element.addEventListener("input", () => {
+    if (isApplyingLanguage) {
+      return;
+    }
+
+    if (activeLanguage === "en") {
+      element.dataset.enContent = element.innerHTML;
+    }
+
     window.clearTimeout(saveTimeout);
     statusLabel.textContent = "Saving changes...";
     saveTimeout = window.setTimeout(persistEditableContent, 250);
   });
 
-  element.addEventListener("blur", persistEditableContent);
+  element.addEventListener("blur", () => {
+    if (isApplyingLanguage) {
+      return;
+    }
+
+    if (activeLanguage === "en") {
+      element.dataset.enContent = element.innerHTML;
+    }
+
+    persistEditableContent();
+  });
 });
 
 if (editableElements.length > 0) {
@@ -214,6 +239,8 @@ const applyNavTranslations = (language) => {
 const applyPageTranslations = (language) => {
   const translations = pageTranslations[window.location.pathname]?.[language];
 
+  isApplyingLanguage = true;
+
   editableElements.forEach((element) => {
     if (language === "zh" && translations?.[element.dataset.editable]) {
       element.innerHTML = translations[element.dataset.editable];
@@ -224,9 +251,12 @@ const applyPageTranslations = (language) => {
       element.innerHTML = element.dataset.enContent;
     }
   });
+
+  isApplyingLanguage = false;
 };
 
 const applyLanguage = (language) => {
+  activeLanguage = language;
   applyNavTranslations(language);
   applyPageTranslations(language);
   languageButton.textContent = language === "zh" ? "English" : "中文";
