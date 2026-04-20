@@ -111,9 +111,28 @@ const pageTranslations = {
       "home-footer-title": "保持联系。",
     },
   },
+  "/project-overview.html": {
+    zh: {
+      "project-overview-label": "项目概览",
+      "project-overview-title": "从 2025 年的第一份报告，到 2026 年的下一阶段。",
+      "project-overview-intro":
+        "这一部分把项目正式放进网站里：2025 页面现在展示第一期项目的背景、环境、活动与结果，而 2026 页面介绍下一阶段的发展方向与长期规划。",
+      "project-overview-subpage-link-1": "2025 项目报告",
+      "project-overview-subpage-label-1": "子页面",
+      "project-overview-subpage-copy-1":
+        "新的概览文档第一部分已经整理成网页内容：项目为什么开始、为什么选择嵩门、三天项目中发生了什么，以及学生们产生了哪些变化。",
+      "project-overview-subpage-link-2": "2026 项目",
+      "project-overview-subpage-label-2": "子页面",
+      "project-overview-subpage-copy-2":
+        "文档第二部分也已放入网站内容中，重点呈现下一阶段：更深的持续性、课外拓展、结构化的身心健康课程、影像叙事，以及更可持续的 2026 模式。",
+      "project-overview-pdf-label": "嵌入文档",
+      "project-overview-pdf-title": "网页介绍项目概览",
+      "project-overview-pdf-copy":
+        "完整 PDF 已嵌入在下方，方便直接在这个页面里阅读整个项目概览。",
+      "project-overview-pdf-open": "在新标签页打开 PDF",
+    },
+  },
 };
-
-const languageStorageKey = "future-and-connection:language";
 
 const createEditorToolbar = () => {
   const toolbar = document.createElement("div");
@@ -262,16 +281,14 @@ const applyLanguage = (language) => {
   languageButton.textContent = language === "zh" ? "English" : "中文";
   languageButton.setAttribute("aria-pressed", String(language === "zh"));
   document.documentElement.lang = language === "zh" ? "zh-CN" : "en";
-  window.localStorage.setItem(languageStorageKey, language);
 };
 
 languageButton.addEventListener("click", () => {
-  const nextLanguage =
-    window.localStorage.getItem(languageStorageKey) === "zh" ? "en" : "zh";
+  const nextLanguage = activeLanguage === "zh" ? "en" : "zh";
   applyLanguage(nextLanguage);
 });
 
-applyLanguage(window.localStorage.getItem(languageStorageKey) === "zh" ? "zh" : "en");
+applyLanguage("en");
 
 const revealItems = document.querySelectorAll(".floating-panel, .detail-card");
 
