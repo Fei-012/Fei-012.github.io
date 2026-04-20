@@ -51,6 +51,7 @@ document.addEventListener("keydown", (event) => {
 
 const editableElements = document.querySelectorAll("[data-editable]");
 const storagePrefix = `future-and-connection:${window.location.pathname}:`;
+const editableStorageVersion = "v2";
 let saveTimeout;
 let activeLanguage = "en";
 let isApplyingLanguage = false;
@@ -159,15 +160,17 @@ const createEditorToolbar = () => {
 
 const statusLabel = createEditorToolbar();
 
+const editableStorageKey = (editableId) =>
+  `${storagePrefix}${editableStorageVersion}:${editableId}:en`;
+
 const persistEditableContent = () => {
   editableElements.forEach((element) => {
-    const key = `${storagePrefix}${element.dataset.editable}`;
     const contentToStore =
       activeLanguage === "zh" && element.dataset.enContent
         ? element.dataset.enContent
         : element.innerHTML;
 
-    localStorage.setItem(key, contentToStore);
+    localStorage.setItem(editableStorageKey(element.dataset.editable), contentToStore);
   });
 
   statusLabel.textContent = `Saved automatically at ${new Date().toLocaleTimeString([], {
@@ -180,13 +183,13 @@ editableElements.forEach((element) => {
   element.dataset.defaultContent = element.innerHTML;
   element.setAttribute("contenteditable", "true");
   element.setAttribute("spellcheck", "true");
+  element.dataset.enContent = element.dataset.defaultContent;
 
-  const storedValue = localStorage.getItem(`${storagePrefix}${element.dataset.editable}`);
+  const storedValue = localStorage.getItem(editableStorageKey(element.dataset.editable));
   if (storedValue !== null) {
     element.innerHTML = storedValue;
+    element.dataset.enContent = storedValue;
   }
-
-  element.dataset.enContent = element.innerHTML;
 
   element.addEventListener("input", () => {
     if (isApplyingLanguage) {
@@ -289,6 +292,9 @@ languageButton.addEventListener("click", () => {
 });
 
 applyLanguage("en");
+window.addEventListener("pageshow", () => {
+  applyLanguage("en");
+});
 
 const revealItems = document.querySelectorAll(".floating-panel, .detail-card");
 
