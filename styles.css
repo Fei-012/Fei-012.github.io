@@ -614,6 +614,24 @@ a {
   font-size: clamp(2.3rem, 4.1vw, 3rem);
 }
 
+.report-2025-page .page-hero h1 {
+  max-width: 14ch;
+  font-size: clamp(3.15rem, 6.5vw, 5.3rem);
+}
+
+.report-2025-page .page-hero p,
+.report-2025-page .subpage-copy,
+.report-2025-page .content-card p,
+.report-2025-page .content-card li,
+.report-2025-page .report-figure figcaption {
+  font-size: clamp(1.12rem, 1.55vw, 1.26rem);
+  line-height: 1.88;
+}
+
+.report-2025-page .section-title {
+  font-size: clamp(2.2rem, 3.9vw, 2.9rem);
+}
+
 .project-overview-visuals {
   margin-top: 30px;
 }
