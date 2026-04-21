@@ -794,11 +794,29 @@ a {
   box-shadow: var(--shadow);
 }
 
-.editor-status {
+.editor-meta {
+  display: grid;
+  gap: 3px;
+}
+
+.editor-title {
   font-family: "Castle", "Manrope", sans-serif;
   font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.editor-hint {
+  font-family: "Castle", "Manrope", sans-serif;
+  font-size: 0.74rem;
+  color: var(--muted-soft);
+}
+
+.editor-status {
+  font-family: "Castle", "Manrope", sans-serif;
+  font-size: 0.78rem;
   color: var(--muted);
-  white-space: nowrap;
 }
 
 .editor-button {

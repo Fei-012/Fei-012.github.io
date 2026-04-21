@@ -139,9 +139,20 @@ const createEditorToolbar = () => {
   const toolbar = document.createElement("div");
   toolbar.className = "editor-toolbar";
 
+  const meta = document.createElement("div");
+  meta.className = "editor-meta";
+
+  const title = document.createElement("div");
+  title.className = "editor-title";
+  title.textContent = "Page editor";
+
+  const hint = document.createElement("div");
+  hint.className = "editor-hint";
+  hint.textContent = "Click any highlighted text to edit. Changes save on this device.";
+
   const status = document.createElement("div");
   status.className = "editor-status";
-  status.textContent = "Editing enabled. Changes save automatically on this device.";
+  status.textContent = "Ready";
 
   const saveButton = document.createElement("button");
   saveButton.type = "button";
@@ -152,7 +163,8 @@ const createEditorToolbar = () => {
     persistEditableContent();
   });
 
-  toolbar.append(status, saveButton);
+  meta.append(title, hint, status);
+  toolbar.append(meta, saveButton);
   document.body.append(toolbar);
 
   return status;
